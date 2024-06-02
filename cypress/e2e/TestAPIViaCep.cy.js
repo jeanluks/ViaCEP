@@ -5,14 +5,14 @@ describe('Teste de API - ViaCEP', () => {
     it('CEP Válido', () => {
       cy.request('GET', 'https://viacep.com.br/ws/50710500/json')
         .then((response) => {
-          expect(response.status).to.eq(200);
+          expect(response.status).to.eq(200); //Esperado retornar sucesso
         });
     });
 
     it('CEP Válido com "-"', () => {
       cy.request('GET', 'https://viacep.com.br/ws/50710-500/json')
         .then((response) => {
-          expect(response.status).to.eq(200);
+          expect(response.status).to.eq(200); //Esperado retornar sucesso
         });
     });
 
@@ -21,7 +21,7 @@ describe('Teste de API - ViaCEP', () => {
         .then((response) => {
           expect(response.status).to.eq(200);
           expect(response.body).to.have.property('erro', true)
-        });
+        }); //Esperado retornar sucesso com o body contendo o valor de "erro = true"
     });
 
     it('CEP Inválido', () => {
@@ -31,7 +31,7 @@ describe('Teste de API - ViaCEP', () => {
         failOnStatusCode:false})
 
         .then((response) => {
-          expect(response.status).to.eq(400);
+          expect(response.status).to.eq(400); //Esperado retornar erro indicando que o formato do CEP é inválido.
         });
     });
 
@@ -42,7 +42,7 @@ describe('Teste de API - ViaCEP', () => {
         failOnStatusCode:false})
 
         .then((response) => {
-          expect(response.status).to.eq(400);
+          expect(response.status).to.eq(400); //Esperado retornar erro indicando que o formato do CEP é inválido.
         });
     });
    
@@ -53,7 +53,7 @@ describe('Teste de API - ViaCEP', () => {
         failOnStatusCode:false})
 
         .then((response) => {
-          expect(response.status).to.eq(400);
+          expect(response.status).to.eq(400); //Esperado retornar erro indicando que o formato do CEP é inválido.
         });
     });
 
@@ -64,7 +64,7 @@ describe('Teste de API - ViaCEP', () => {
         failOnStatusCode:false})
 
         .then((response) => {
-          expect(response.status).to.eq(400);
+          expect(response.status).to.eq(400); //Esperado retornar erro indicando que o formato do CEP é inválido.
         });
     });
 
@@ -82,7 +82,7 @@ describe('Teste de API - ViaCEP', () => {
             expect(response.body).to.have.property('gia', '1004'),
             expect(response.body).to.have.property('ddd', '11'),
             expect(response.body).to.have.property('siafi', '7107')
-          });
+          }); //Esperado retornar sucesso indicando que o body é realmente um array
       });
 
       it('Parâmetro Incompleto (CEP)', () => {
@@ -92,7 +92,7 @@ describe('Teste de API - ViaCEP', () => {
           failOnStatusCode:false})
   
           .then((response) => {
-            expect(response.status).to.eq(400);
+            expect(response.status).to.eq(400); //Esperado retornar erro indicando que o CEP é inválido.
           });
       }); 
   });
@@ -102,7 +102,7 @@ describe('Teste de API - ViaCEP', () => {
     it('Procurar CEP Válido', () => {
       cy.request('GET', 'https://viacep.com.br/ws/pe/recife/conde/json')
         .then((response) => {
-          expect(response.status).to.eq(200);
+          expect(response.status).to.eq(200); //Esperado retornar sucesso com o body indicando os campos de CEP, logradouro, complemento, bairro, uf, ibge, gia, ddd e siafi
         });
     });
 
