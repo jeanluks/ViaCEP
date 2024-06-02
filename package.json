@@ -1,0 +1,14 @@
+{
+  "name": "viacep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress"
+  },
+  "author": "Jean",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.4"
+  }
+}
