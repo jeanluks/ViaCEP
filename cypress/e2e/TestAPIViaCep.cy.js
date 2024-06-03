@@ -124,7 +124,7 @@ describe('Teste de API - ViaCEP', () => {
         failOnStatusCode: false})
 
         .then((response) => {
-          expect(response.status).to.eq(400); //Esperado retornar erro indicando que o estado é inválido pois não pode ter MENOS de 2 caracteres.
+          expect(response.status).to.eq(400); //Esperado retornar erro indicando que o estado é inválido pois tem que ter 2 caracteres.
         });
     });
 
@@ -135,7 +135,7 @@ describe('Teste de API - ViaCEP', () => {
         failOnStatusCode: false})
 
         .then((response) => {
-          expect(response.status).to.eq(400); //Esperado retornar erro indicando que o estado é inválido pois não pode ter MAIS de 2 caracteres.
+          expect(response.status).to.eq(400); //Esperado retornar erro indicando que o estado é inválido pois tem que ter 2 caracteres.
         });
     });
 
@@ -154,7 +154,7 @@ describe('Teste de API - ViaCEP', () => {
       cy.request('GET','https://viacep.com.br/ws/sp/itu/conde/json')
 
         .then((response) => {
-          expect(response.status).to.eq(200); //Esperado retornar sucesso indicando que a CIDADE é válida e pode ter PELO MENOS 3 caracteres.
+          expect(response.status).to.eq(200); //Esperado retornar sucesso na requisição
         });
     });
 
