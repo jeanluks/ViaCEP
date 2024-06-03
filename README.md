@@ -1,5 +1,5 @@
 # ViaCEP
-### Automatização de Testes de API do ViaCEP
+### Automatização de Testes de API do ViaCEP:
 
 Este guia tem como função documentar todo o passo a passo realizado durante a elaboração da automação da API do ViaCEP, com a finalidade de colaborar e guiar a pessoa que planeja entender o projeto.
 
@@ -11,7 +11,7 @@ Dividi os cenários em "Validação do CEP" e "Pesquisa de CEP", ja que possuem 
 Em validação do cep, consegui mapear 9 cenários de testes, e em pesquisa de CEP, 14 cenários possíveis.
 Baseado nas tecnicas de BDD e Gherkin elaborei os seguintes cenários:
 
-#### Validação do CEP
+#### Validação do CEP:
 
 | Cenário de Teste             | Dado                                   | Quando                                  | Então                                                                    | Status |
 | ---------------------------- | -------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------ | ------ |
@@ -24,7 +24,7 @@ Baseado nas tecnicas de BDD e Gherkin elaborei os seguintes cenários:
 | Resposta da API              | Um CEP válido                          | Quando fizermos a requisição o passando | É esperado retornar sucesso indicando que o body é realmente um array    | OK     |
 | Parâmetro Incompleto (CEP)   | Que nenhum CEP é passado na requisição | Quando enviarmos a requisição           | É esperado retornar erro indicando que o CEP é obrigatorio               | OK     |
 
-#### Pesquisa de CEP
+#### Pesquisa de CEP:
 
 | Cenário de Teste             | Dado                                   | Quando                                  | Então                                                                    | Status |
 | ---------------------------- | -------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------ | ------ |
@@ -43,3 +43,12 @@ Baseado nas tecnicas de BDD e Gherkin elaborei os seguintes cenários:
 | Parâmetros Incompletos (Estado)         | Que nenhum Estado é passado na requisição | Quando enviarmos a requisição | É esperado retornar erro indicando que o Estado é obrigatorio               | OK     |
 | Teste de Resposta da API                |  Um Estado, Cidade e Logradouro válido | Quando fizermos a requisição o passando | É esperado que seja retornado um array e que possua tamanho maximo de 50 | OK |
 
+### Testes Exploratorios:
+
+Para Executar os Testes Exploratorios e saber como iam se comportar diante os cenários que havia criado, utilizei do Postman para testar a API.
+Fiz os cenários tanto para os casos da tabela de Validação do Cep, quanto para os casos da tabela Pesquisa de Cep.
+Como Pode ser visto nos Status de ambas as Tabelas, apenas 3 cenários foram rejeitados.
+
+![Imagem dos Testes Exploratorios Feito no Postman](PostmanViaCEP.jpeg)
+
+### Problemas Encontrados:
