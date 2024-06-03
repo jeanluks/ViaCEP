@@ -81,9 +81,12 @@ pares, que são as mais consistentes.
 #### Como Executar os Testes:
 1 - Primeiramente, é necessário ter o arquivo do projeto
 baixado.
+
 2 - Verifique se todos os itens acima estão devidamente
 correspondidos.
+
 3 - rodar o npx cypress open dentro do projeto
+
 4 - Vídeo demonstrativo na branch main do GitHub (LINK: https://github.com/jeanluks/ViaCEP)
 
 #### Onde encontrar o código:
